@@ -4,5 +4,17 @@
   Hier kannst du dich für die Hörertalksendung Ferngespräche anmelden. Dafür brauchst du einen Account, den du <%= link_to "hier", new_user_registration_path  %> erstellen kannst. Falls du schon einen Account hast, kannst du dich <%= link_to "hier", new_user_session_path %> einloggen.
 </p>
 <% else %>
-  Hallo <%= current_user.email %>. <%= link_to "Ausloggen",  destroy_user_session_path, method: :delete %>
+  <p>Hallo <%= current_user.email %>. <%= link_to "Ausloggen",  destroy_user_session_path, method: :delete %></p>
+
+  <% unless current_user.proposals.empty? %>
+    <p>Deine aktuellen Vorschläge:</p>
+    <ul>
+      <% current_user.proposals.each do |proposal| %>
+        <li><%= proposal.title %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Keine Vorschläge vorhanden.</p>
+  <% end %>
+  Neuen Vorschlag anlegen.
 <% end %>
