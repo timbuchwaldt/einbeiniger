@@ -1,9 +1,10 @@
 Einbeiniger::Application.routes.draw do
-  get "proposals/create"
-  get "proposals/update"
-  get "proposals/delete"
+  resources :proposals
+
   get "static_page/home"
+
   devise_for :users
+
   root :to => "static_page#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
