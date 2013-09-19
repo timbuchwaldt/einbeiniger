@@ -1,20 +1,27 @@
-<h1>Wilkommen zum Einbeinigen</h1>
-<% unless current_user %>
-<p>
-  Hier kannst du dich für die Hörertalksendung Ferngespräche anmelden. Dafür brauchst du einen Account, den du <%= link_to "hier", new_user_registration_path  %> erstellen kannst. Falls du schon einen Account hast, kannst du dich <%= link_to "hier", new_user_session_path %> einloggen.
-</p>
-<% else %>
-  <p>Hallo <%= current_user.email %>. <%= link_to "Ausloggen",  destroy_user_session_path, method: :delete %></p>
+<div class="page-header">
+  <h1>Willkommen zum Einbeinigen</h1>
+</div>
+<% if current_user %>
+  <div class="lead">
+  <p>Hallo,</p>
 
   <% unless current_user.proposals.empty? %>
     <p>Deine aktuellen Vorschläge:</p>
-    <ul>
-      <% current_user.proposals.each do |proposal| %>
-        <li><%= proposal.title %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>Keine Vorschläge vorhanden.</p>
+  <ul>
+    <% current_user.proposals.each do |proposal| %>
+      <li><%= proposal.title %></li>
   <% end %>
-  Neuen Vorschlag anlegen.
+  </ul>
+<% else %>
+    <p>Keine Vorschläge vorhanden.</p>
 <% end %>
+  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Neuen Vorschlag anlegen'), new_proposal_path, class: 'btn btn-success btn-xs' %>
+</div>
+
+<% else %>
+  <div class="lead">
+  <p>Hier kannst du dich für die Hörertalksendung Ferngespräche anmelden.</p>
+  <p>Dafür brauchst du einen Account, den du <%= link_to "hier", new_user_registration_path  %> erstellen kannst. Falls du schon einen Account hast, kannst du dich <%= link_to "hier", new_user_session_path %> einloggen.</p>
+</div>
+<% end %>
+

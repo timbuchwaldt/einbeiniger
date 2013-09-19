@@ -13,3 +13,28 @@
  *= require font-awesome
  *= require_tree .
  */
+
+body {
+  padding-top: 50px;
+}
+
+html, body {
+  height: 100%;
+}
+
+#main-container {
+  margin-top: 10px;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -20px;
+  padding: 0 0 20px;
+}
+
+#footer {
+  height: 20px;
+  background-color: #f5f5f5;
+}
