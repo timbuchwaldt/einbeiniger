@@ -1,4 +1,7 @@
 Einbeiniger::Application.routes.draw do
+  get "proposals/create"
+  get "proposals/update"
+  get "proposals/delete"
   get "static_page/home"
   devise_for :users
   root :to => "static_page#home"
