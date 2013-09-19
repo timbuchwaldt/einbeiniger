@@ -1,0 +1,7 @@
+<h1>Wilkommen zum Einbeinigen</h1>
+<% unless current_user %><p>
+Hier kannst du dich für die Hörertalksendung Ferngespräche anmelden. Dafür brauchst du einen Account, den du <%= link_to "hier", new_user_registration_path  %> erstellen kannst. Falls du schon einen Account hast, kannst du dich <%= link_to "hier", new_user_session_path %> einloggen.
+</p>
+<% else %>
+  Hallo <%= current_user.email %>. <%= link_to "Ausloggen",  destroy_user_session_path, method: :delete %>
+<% end %>
