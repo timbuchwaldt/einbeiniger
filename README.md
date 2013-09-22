@@ -18,4 +18,3 @@ Use the following to create a secret key on heroku:
 
 - Create proposals controller
 - Create cancan-model for elevated privileges
-- STYLE!!!11elf
