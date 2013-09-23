@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :proposals
+
+  def moderator?
+    self.role == "moderator"
+  end
 end

@@ -1,0 +1,27 @@
+<h1>Gesprächsvorschläge</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr>
+        <td><%= proposal.title %></td>
+        <td><%= link_to 'Details', proposal %></td>
+        <td><%= link_to 'Bearbeiten', edit_proposal_path(proposal) %></td>
+        <td><%= link_to 'Löschen', proposal, method: :delete, data: { confirm: 'Gaaaanz sicher?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Neuen Vorschlag anlegen', new_proposal_path %>
