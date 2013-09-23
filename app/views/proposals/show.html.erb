@@ -3,9 +3,9 @@
   <%= @proposal.description %>
 </p>
 <p>
-  <b>Status:</b> <%= @proposal.german_state %> <br />
+  <b>Status:</b> <%=t "proposal.#{@proposal.state}" %> <br />
   <b>Show:</b> <%= @proposal.show.date if @proposal.show %>
 </p>
 
-<%= link_to 'Bearbeiten', edit_proposal_path(@proposal) %> |
-<%= link_to 'Zurück', proposals_path %>
+<%= link_to t(:edit), edit_proposal_path(@proposal) %> |
+<%= link_to t(:back), proposals_path %>

@@ -1,4 +1,6 @@
 class Proposal < ActiveRecord::Base
+  include AASM
+
   belongs_to :user
   belongs_to :show
 
@@ -13,8 +15,29 @@ class Proposal < ActiveRecord::Base
     presence: true,
     length: {in: 4..1024}
 
-  def german_state
-    translation = {"added" => "Hinzugefügt", "accepted" => "Akzeptiert", "rejected" => "Abgelehnt"}
-    return translation[self.state]
+  aasm column: 'state' do
+    state :created, initial: true
+    state :accepted
+    state :rejected
+    state :called
+    state :backup
+
+    event :accept do
+      transitions from: [:created,:rejected,:backup], to: :accepted
+    end
+
+    event :reject do
+      transitions from: [:created,:accepted,:backup], to: :rejected
+    end
+
+    event :backup do
+      transitions from: [:created,:accepted,:rejected], to: :backup
+    end
+
+    event :call do
+      transitions from: [:accepted, :backup], to: :called
+    end
+
   end
+
 end

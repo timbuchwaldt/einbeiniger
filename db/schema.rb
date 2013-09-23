@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20130923154615) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "state",       default: "added"
+    t.string   "state"
     t.integer  "show_id"
   end
 
