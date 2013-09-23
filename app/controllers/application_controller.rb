@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   protected
   # Devise override for profile updates
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) << [:phone, :skype]
+    user_params = %i(phone year_of_birth location name skype)
+    devise_parameter_sanitizer.for(:account_update) << user_params
+    devise_parameter_sanitizer.for(:sign_up) << user_params
   end
 end
