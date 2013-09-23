@@ -9,4 +9,17 @@ class User < ActiveRecord::Base
   def moderator?
     self.role == "moderator"
   end
+
+  # bypass re-entering current password for edit
+  def update_with_password(params={})
+    params.delete(:current_password)
+
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+    update_attributes(params)
+
+    clean_up_passwords
+  end
 end
