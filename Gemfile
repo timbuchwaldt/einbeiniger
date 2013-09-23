@@ -16,6 +16,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Use aasm for the proposal state machine
+gem 'aasm'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass-rails', '~> 3.0.0.3'
