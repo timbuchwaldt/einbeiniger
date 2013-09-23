@@ -1,4 +1,7 @@
 #einbeiniger
+The "einbeinige" is a mysterious creature from the german radio scene. He allows scheduling calls for call-in shows with a simple proposal system.
+
+
 ## local testing
 
 Install the ruby bundler gem and run bundle to install the gems:
@@ -13,8 +16,3 @@ Use the following to create a secret key on heroku:
 
     heroku config:set SECRET_KEY_BASE=`rake secret`
 
-
-# todo
-
-- Create proposals controller
-- Create cancan-model for elevated privileges
