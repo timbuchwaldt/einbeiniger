@@ -44,5 +44,8 @@ SimpleForm.setup do |config|
   config.default_wrapper = :bootstrap3
   config.button_class = 'btn btn-default'
   config.error_notification_class = 'alert alert-danger'
-  config.label_class = 'col-lg-2 control-label'
+
+  config.form_class = "form-horizontal"
+  config.label_class = "col-xs-2 col-sm-2 col-md-3 col-lg-3 control-label"
+  #config.input_class = "form-control" #not yet supported
 end
