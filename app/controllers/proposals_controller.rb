@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :set_proposal, only: [:show, :edit, :update, :destroy, :update_state]
   # GET /proposals
   # GET /proposals.json
   def index
@@ -23,6 +23,18 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/1/edit
   def edit
+  end
+
+  def update_state
+    throw "No way man" unless current_user.moderator?
+    action = params[:p_action]
+    if @proposal.send("may_#{action}?")
+      @proposal.send(action)
+      @proposal.save
+      redirect_to @proposal, notice: 'Proposal updated successfully'
+    else
+      redirect_to @proposal, alert: 'No can do'
+    end
   end
 
   # POST /proposals

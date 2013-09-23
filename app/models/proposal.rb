@@ -15,6 +15,10 @@ class Proposal < ActiveRecord::Base
     presence: true,
     length: {in: 4..1024}
 
+  def translated_state
+    I18n.t("proposal.#{self.state}")
+  end
+
   aasm column: 'state' do
     state :created, initial: true
     state :accepted
