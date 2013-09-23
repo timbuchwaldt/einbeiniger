@@ -22,6 +22,9 @@ gem 'sass-rails', '~> 4.0.0'
 # Use devise for authentication
 gem 'devise'
 
+# Use cancan for role based stuff
+gem 'cancan', github: 'ncri/cancan', branch: '2.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

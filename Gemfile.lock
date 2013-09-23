@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/ncri/cancan.git
+  revision: aa370c3ea1907df534708105b20f243c388377d5
+  branch: 2.0
+  specs:
+    cancan (2.0.0.alpha)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -123,6 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan!
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 1.2)
