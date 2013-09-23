@@ -1,5 +1,6 @@
 class Proposal < ActiveRecord::Base
   belongs_to :user
+  belongs_to :show
 
   validates :user_id,
     presence: true
@@ -12,5 +13,8 @@ class Proposal < ActiveRecord::Base
     presence: true,
     length: {in: 4..1024}
 
-
+  def german_state
+    translation = {"added" => "Hinzugefügt", "accepted" => "Akzeptiert", "rejected" => "Abgelehnt"}
+    return translation[self.state]
+  end
 end

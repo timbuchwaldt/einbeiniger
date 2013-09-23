@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Vorschlag: <%= @proposal.title %></h1>
+<p>
+  <%= @proposal.description %>
+</p>
+<p>
+  <b>Status:</b> <%= @proposal.german_state %> <br />
+  <b>Show:</b> <%= @proposal.show.date if @proposal.show %>
+</p>
 
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+<%= link_to 'Bearbeiten', edit_proposal_path(@proposal) %> |
+<%= link_to 'Zurück', proposals_path %>
