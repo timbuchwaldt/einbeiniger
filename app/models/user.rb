@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
     self.role == "moderator"
   end
 
+  def age
+    current_year = DateTime.now.year
+    current_year - year_of_birth
+  end
+
   # bypass re-entering current password for edit
   def update_with_password(params={})
     params.delete(:current_password)

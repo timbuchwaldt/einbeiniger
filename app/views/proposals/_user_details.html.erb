@@ -2,9 +2,13 @@
 
 <dl class="dl-horizontal">
   <dt>Name</dt>
-    <dd><%= @proposal.user.email %></dd>
+    <dd><%= @proposal.user.name %></dd>
   <dt>Alter</dt>
-    <dd><%= @proposal.user.email %></dd>
-  <dt>Stadt</dt>
-    <dd><%= @proposal.user.email %></dd>
+    <dd><%= @proposal.user.age %></dd>
+  <dt>Ort</dt>
+    <dd><%= @proposal.user.location %></dd>
+  <dt>Telefon</dt>
+    <dd><%= @proposal.user.phone %></dd>
+  <dt>Skype</dt>
+    <dd><%= link_to @proposal.user.skype, "skype://#{@proposal.user.skype}" %></dd>
 </dl>
