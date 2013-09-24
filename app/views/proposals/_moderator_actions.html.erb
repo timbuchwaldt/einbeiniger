@@ -1,5 +1,6 @@
 <% %w'accept reject backup call'.each do |action| %>
   <% if @proposal.send("may_#{action}?") %>
-    <%= link_to t("proposal.#{action}"), update_state_proposal_path(@proposal,action), method: :post, class: 'btn btn-default' %>
+    <%= link_to t("proposal.#{action}"), update_state_proposal_path(@proposal,action), method: :post, class: 'btn btn-default btn-sm' %>
   <% end %>
 <% end %>
+<br />
