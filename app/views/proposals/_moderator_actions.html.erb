@@ -1,0 +1,15 @@
+<% if @proposal.may_accept? %>
+  <%= link_to t('proposal.accept'), update_state_proposal_path(@proposal, 'accept'), method: :post %>
+<% end %>
+
+<% if @proposal.may_reject? %>
+  <%= link_to t('proposal.reject'), update_state_proposal_path(@proposal, 'reject'), method: :post %>
+<% end %>
+
+<% if @proposal.may_backup? %>
+  <%= link_to t('proposal.backup'), update_state_proposal_path(@proposal, 'backup'), method: :post %>
+<% end %>
+
+<% if @proposal.may_call? %>
+  <%= link_to t('proposal.call'), update_state_proposal_path(@proposal, 'call'), method: :post %>
+<% end %>
