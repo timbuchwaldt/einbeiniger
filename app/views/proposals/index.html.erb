@@ -1,9 +1,10 @@
 <h1>Gesprächsvorschläge</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
+      <th>Status</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,6 +15,7 @@
     <% @proposals.each do |proposal| %>
       <tr>
         <td><%= proposal.title %></td>
+        <td><%= proposal.translated_state %></td>
         <td><%= link_to 'Details', proposal %></td>
         <td><%= link_to 'Bearbeiten', edit_proposal_path(proposal) %></td>
         <td><%= link_to 'Löschen', proposal, method: :delete, data: { confirm: 'Gaaaanz sicher?' } %></td>

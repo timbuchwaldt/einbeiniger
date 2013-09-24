@@ -3,9 +3,12 @@
   <%= @proposal.description %>
 </p>
 <p>
-  <b>Status:</b> <%=t "proposal.#{@proposal.state}" %> <br />
+  <b>Status:</b> <%= @proposal.translated_state %> <br />
   <b>Show:</b> <%= @proposal.show.date if @proposal.show %>
 </p>
+
+<%= render 'moderator_actions' if current_user.moderator? %>
+
 
 <%= link_to t(:edit), edit_proposal_path(@proposal) %> |
 <%= link_to t(:back), proposals_path %>
