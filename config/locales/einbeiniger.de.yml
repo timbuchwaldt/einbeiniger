@@ -1,0 +1,15 @@
+de:
+  edit: "Bearbeiten"
+  back: "Zurück"
+  proposal:
+    created: "Angelegt"
+    accepted: "Akzeptiert"
+    rejected: "Abgelehnt"
+    called: "Angerufen"
+    backup: "Backup"
+    accept: "Annehmen"
+    reject: "Ablehnen"
+    backup: "Backup"
+    call: "Als angerufen markieren"
+    state_changed: "Status geändert"
+    state_not_changed: "Statusänderung ungültig"

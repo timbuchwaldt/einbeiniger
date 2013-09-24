@@ -16,14 +16,18 @@
       </ul>
 
       <% if current_user %>
-        <p class="navbar-text pull-right">
-      <%= current_user.email %>
-      <%= link_to raw('<span class="glyphicon glyphicon-log-out"></span>'), destroy_user_session_path, { method: "DELETE", class: "navbar-link", title: "Abmelden" } %>
-      </p>
+        <ul class="nav navbar-nav navbar-right navbar-form">
+        <li>
+        <div class="btn-group">
+          <%= link_to raw("<span class=\"icon-user\"></span> #{h(current_user.name || current_user.email)}"), edit_user_registration_path, { title: 'Profil bearbeiten', class: 'btn btn-default' } %>
+          <%= link_to raw('<span class="icon-signout"></span>'), destroy_user_session_path, { method: :delete, class: 'btn btn-default', title: 'Abmelden' } %>
+        </div>
+        </li>
+      </ul>
     <% else %>
         <%= form_for(:user, :url => session_path(:user), html: { class: 'navbar-form navbar-right' }) do |f| %>
         <div class="form-group">
-        <%= f.email_field :email, :autofocus => true, placeholder: 'Email', class: 'form-control' %>
+        <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.password_field :password, placeholder: "Passwort", class: 'form-control' %>
