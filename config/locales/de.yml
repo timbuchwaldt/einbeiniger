@@ -11,3 +11,5 @@ de:
     reject: "Ablehnen"
     backup: "Backup"
     call: "Als angerufen markieren"
+    state_changed: "Status geändert"
+    state_not_changed: "Statusänderung ungültig"
