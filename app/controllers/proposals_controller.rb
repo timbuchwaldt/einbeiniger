@@ -29,11 +29,10 @@ class ProposalsController < ApplicationController
     throw "No way man" unless current_user.moderator?
     action = params[:p_action]
     if @proposal.send("may_#{action}?")
-      @proposal.send(action)
-      @proposal.save
-      redirect_to @proposal, notice: 'Proposal updated successfully'
+      @proposal.send("#{action}!")
+      redirect_to @proposal, notice: t('proposal.state_changed')
     else
-      redirect_to @proposal, alert: 'No can do'
+      redirect_to @proposal, alert: t('proposal.state_not_changed')
     end
   end
 
