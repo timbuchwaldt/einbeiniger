@@ -9,7 +9,7 @@
     <p>Deine aktuellen Vorschläge:</p>
   <ul>
     <% current_user.proposals.each do |proposal| %>
-      <li><%= link_to proposal.title, proposal_path(proposal) %></li>
+      <li><%= link_to "#{proposal.title} (#{proposal.translated_state})", proposal_path(proposal) %></li>
   <% end %>
   </ul>
 <% else %>
