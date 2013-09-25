@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :proposals
 
+  validates :name, presence: true
+  validates :year_of_birth, presence: true
+
   def moderator?
     self.role == "moderator"
   end
