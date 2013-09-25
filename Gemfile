@@ -18,6 +18,11 @@ group :production do
   gem 'newrelic_rpm'
 end
 
+# use rails admin for easy administration
+gem 'rails_admin'
+
+# use puma as the app server
+gem 'puma'
 # Use aasm for the proposal state machine
 gem 'aasm'
 
