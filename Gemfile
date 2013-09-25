@@ -14,6 +14,8 @@ group :production do
   gem 'pg'
   # Use 12 factor gem for running on heroku
   gem 'rails_12factor'
+  # use new relic for monioring
+  gem 'newrelic_rpm'
 end
 
 # Use aasm for the proposal state machine
