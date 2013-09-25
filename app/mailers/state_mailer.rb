@@ -6,10 +6,10 @@ class StateMailer < ActionMailer::Base
   #
   #   en.state_mailer.accepted.subject
   #
-  def accepted
-    @greeting = "Hi"
+  def accepted(proposal)
+    @proposal = proposal
 
-    mail to: "tim@buchwaldt.ws"
+    mail to: proposal.user.email
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,10 +17,10 @@ class StateMailer < ActionMailer::Base
   #
   #   en.state_mailer.rejected.subject
   #
-  def rejected
-    @greeting = "Hi"
+  def rejected(proposal)
+    @proposal = proposal
 
-    mail to: "to@example.org"
+    mail to: proposal.user.email
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -28,9 +28,9 @@ class StateMailer < ActionMailer::Base
   #
   #   en.state_mailer.backup.subject
   #
-  def backup
-    @greeting = "Hi"
+  def backup(proposal)
+    @proposal = proposal
 
-    mail to: "to@example.org"
+    mail to: proposal.user.email
   end
 end
