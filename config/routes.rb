@@ -8,6 +8,7 @@ Einbeiniger::Application.routes.draw do
   end
 
   get "static_page/home"
+  get "user" => redirect("/users/edit")
 
   devise_for :users
 
