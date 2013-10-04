@@ -12,7 +12,11 @@
       <ul class="nav navbar-nav">
         <% if current_user %>
           <li><%= link_to "Vorschläge", proposals_path %></li>
-      <% end %>
+          <% if current_user.moderator? %>
+          <li><%= link_to "Admin", admin_proposals_path %></li>
+          <% end %>
+        <% end %>
+
       </ul>
 
       <% if current_user %>

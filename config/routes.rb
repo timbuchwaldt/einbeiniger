@@ -2,6 +2,9 @@ Einbeiniger::Application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :proposals do
+    collection do
+      get 'admin', action: :admin, as: 'admin'
+    end
     member do
       post 'update_state/:p_action', action: :update_state, as: 'update_state'
     end

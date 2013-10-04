@@ -11,6 +11,11 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def admin
+    throw "No way man" unless current_user.moderator?
+    @proposals = Proposal.all
+  end
+
   # GET /proposals/1
   # GET /proposals/1.json
   def show

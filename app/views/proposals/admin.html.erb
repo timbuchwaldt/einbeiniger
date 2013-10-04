@@ -1,0 +1,31 @@
+<% @proposals.group_by(&:state).each do |state, proposals| %>
+  <h2><%= t("proposal.#{state}") %></h2>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Gast</th>
+
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <% proposals.each do |proposal| %>
+      <tr>
+        <td><%= link_to proposal.title, proposal %></td>
+        <td><%= proposal.translated_state %></td>
+        <td><%= proposal.user.name %></td>
+        <td><%= link_to 'Details', proposal %></td>
+        <td><%= link_to 'Bearbeiten', edit_proposal_path(proposal) %></td>
+        <td><%= link_to 'Löschen', proposal, method: :delete, data: { confirm: 'Gaaaanz sicher?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
