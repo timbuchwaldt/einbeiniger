@@ -9,6 +9,8 @@
     <dd><%= @proposal.user.location %></dd>
   <dt>Telefon</dt>
     <dd><%= @proposal.user.phone %></dd>
+  <dt>Email</dt>
+    <dd><%= @proposal.user.email %></dd>
   <dt>Skype</dt>
-    <dd><%= link_to @proposal.user.skype, "skype://#{@proposal.user.skype}" %></dd>
+    <dd><%= link_to @proposal.user.skype, "skype:#{@proposal.user.skype}" %></dd>
 </dl>
