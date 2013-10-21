@@ -25,5 +25,8 @@
 </table>
 
 <br>
-
-<%= link_to 'Neuen Vorschlag anlegen', new_proposal_path %>
+<% if Setting.proposals_enabled? %>
+  <%= link_to 'Neuen Vorschlag anlegen', new_proposal_path %>
+<% else %>
+  Aktuell können keine neuen Vorschläge angelegt werden.
+<% end %>

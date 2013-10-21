@@ -4,6 +4,8 @@ Einbeiniger::Application.routes.draw do
   resources :proposals do
     collection do
       get 'admin', action: :admin, as: 'admin'
+      post 'disable', action: :disable_proposals, as: 'disable'
+      post 'enable', action: :enable_proposals, as: 'enable'
     end
     member do
       post 'update_state/:p_action', action: :update_state, as: 'update_state'

@@ -15,7 +15,14 @@
 <% else %>
     <p>Keine Vorschläge vorhanden.</p>
 <% end %>
-  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Neuen Vorschlag anlegen'), new_proposal_path, class: 'btn btn-success btn-xs' %>
+<% if Setting.proposals_enabled? %>
+<%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Neuen Vorschlag anlegen'), new_proposal_path, class: 'btn btn-success btn-lg' %>
+<% else %>
+
+<a href="#" class="btn btn-default btn-lg "><span class="glyphicon glyphicon-pencil"></span>Aktuell können keine Vorschläge erstellt werden.</a>
+<br />
+<small>Holgi gibt auf Twitter bekannt, wenn Vorschläge erstellt werden können.</small>
+<% end %>
 </div>
 
 <% else %>

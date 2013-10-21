@@ -14,6 +14,7 @@ class ProposalsController < ApplicationController
   def admin
     throw "No way man" unless current_user.moderator?
     @proposals = Proposal.all
+    @proposals_enabled = Setting.where(key: "proposals_enabled").first.value
   end
 
   # GET /proposals/1
@@ -81,6 +82,21 @@ class ProposalsController < ApplicationController
     end
   end
 
+  def enable_proposals
+    throw "No way man" unless current_user.moderator?
+    s = Setting.where(key: "proposals_enabled").first
+    s.value = "true"
+    s.save
+    redirect_to admin_proposals_path
+  end
+
+  def disable_proposals
+    throw "No way man" unless current_user.moderator?
+    s = Setting.where(key: "proposals_enabled").first
+    s.value = "false"
+    s.save
+    redirect_to admin_proposals_path
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_proposal
