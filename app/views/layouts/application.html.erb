@@ -7,6 +7,20 @@
 <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var s = document.createElement('script');
+    var t = document.getElementsByTagName('script')[0];
+
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//api.flattr.com/js/0.6/load.js?mode=auto';
+
+    t.parentNode.insertBefore(s, t);
+ })();
+/* ]]> */
+</script>
 </head>
 <body>
 <div id="wrap">
@@ -23,7 +37,7 @@
 </div>
 <div id="footer">
   <div class="container">
-    <span class="text-muted credit">&copy; 2013, @timbuchwaldt, @klaustopher</span><span class="text-muted credit" style="float:right;"> Support the development: <script id='fbw2mji'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=21studios&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbw2mji');</script> </span>
+    <p class="text-muted credit">&copy; 2013, @timbuchwaldt, @klaustopher <span style="float:right;display:inline-block"><a class="FlattrButton" href="http://einbeiniger.herokuapp.com/" title="Einbeinigen unterstützen" lang="de_DE" rel="flattr;uid:21studios;category:software;button:compact">Entwicklung des Einbeinigen unterstützen</a></span></p>
   </div>
 </div>
 </body>
