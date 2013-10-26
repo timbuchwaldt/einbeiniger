@@ -45,6 +45,7 @@ class ProposalsController < ApplicationController
   # POST /proposals
   # POST /proposals.json
   def create
+    throw "Go away, you are drunk" unless Setting.proposals_enabled?
     @proposal = Proposal.new(proposal_params)
     @proposal.user = current_user
     respond_to do |format|

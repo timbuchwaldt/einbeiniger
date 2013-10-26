@@ -7,6 +7,7 @@ gem 'rails', '4.0.0'
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'quiet_assets'
 end
 
 group :production do
@@ -14,9 +15,10 @@ group :production do
   gem 'pg'
   # Use 12 factor gem for running on heroku
   gem 'rails_12factor'
-  # use new relic for monioring
-  gem 'newrelic_rpm'
 end
+
+# use new relic for monioring
+gem 'newrelic_rpm'
 
 # use rails admin for easy administration
 gem 'rails_admin'

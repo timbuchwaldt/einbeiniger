@@ -32,8 +32,9 @@
 </table>
 <% end %>
 
+<h3>Einstellungen</h3>
 <% if @proposals_enabled == "true" %>
-  <%= link_to "Disable", disable_proposals_path, method: "post" %>
+  <%= link_to "Vorschläge deaktivieren", disable_proposals_path, method: "post" %>
 <% else %>
-  <%= link_to "Enable", enable_proposals_path, method: "post" %>
+  <%= link_to "Vorschläge aktivieren", enable_proposals_path, method: "post" %>
 <% end %>
