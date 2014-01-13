@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :proposals
-
+  has_paper_trail
   validates :name, presence: true
   validates :year_of_birth, presence: true
 

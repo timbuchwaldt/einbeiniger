@@ -63,6 +63,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+# Use paper_trail for keeping track of changes
+gem 'paper_trail', '~> 3.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
