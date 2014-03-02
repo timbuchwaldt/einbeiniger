@@ -33,6 +33,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails', '~> 5.1.1.0'
 gem 'font-awesome-rails', '~> 4.0.3.0'
 gem 'simple_form', '~> 3.0.0.rc'
+gem 'slim', '~> 2.0.2'
 
 # Use devise for authentication
 gem 'devise'
