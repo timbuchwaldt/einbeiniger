@@ -1,0 +1,38 @@
+.fixed
+  nav.top-bar data={ topbar: "" }
+    ul.title-area
+      li.name
+        h1
+          =link_to "WRINT Einbeiniger", root_path
+      li.toggle-topbar.menu-icon
+        a href="#" Menü
+
+    section.top-bar-section
+      ul.left
+        li.divider
+        - if current_user
+          li=link_to "Vorschläge", proposals_path
+          li.divider
+          -if current_user.moderator?
+            li= link_to "Admin", admin_proposals_path
+            li.divider
+      ul.right
+        li.divider
+        - if current_user
+          li.has-dropdown
+            a href="#"
+              = h(current_user.name || current_user.email)
+            ul.dropdown
+              li=link_to "Profil bearbeiten", edit_user_registration_path
+              li=link_to "Abmelden", destroy_user_session_path, { method: :delete }
+        - else
+          li.has-form
+            = form_for :user, :url => session_path(:user) do |f|
+              .row.collapse
+                .large-3.small-3.columns= f.email_field :email, placeholder: 'Email'
+                .large-3.small-3.columns= f.password_field :password, placeholder: "Passwort"
+                .large-5.small-5.columns
+                  .button-bar
+                    .button-group.round
+                      = f.submit "Login", class: "tiny button"
+                      = link_to "Registrieren", new_user_registration_path, class: "tiny button "

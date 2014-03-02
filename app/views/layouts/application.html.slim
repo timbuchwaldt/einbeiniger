@@ -1,0 +1,28 @@
+doctype html
+html lang="de"
+  head
+    meta charset="utf-8" /
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title="#{yield(:title) if content_for?(:title)} Einbeiniger"
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "vendor/modernizr"
+    = csrf_meta_tags
+
+  body
+    = render partial: 'shared/menu'
+    .row
+      .large-12
+        = yield
+
+    footer.row
+      .large-12.columns
+        hr
+        .row
+          .large-6.columns
+            p &copy; 2013-2014
+          .large-6.columns
+            ul.inline-list.right
+              li=link_to "Tim Buchwaldt", "https://alpha.app.net/timbuchwaldt"
+              li=link_to "Klaus Zanders", "https://alpha.app.net/klaustopher"
+              li=link_to "Die Entwicklung des Einbeinigen unterstützen", "http://einbeiniger.herokuapp.com", title: "Einbeinigen unterstützen", lang: "de_DE", rel: "flattr;uid:21studios;category:software;button:compact", class: "FlattrButton"
