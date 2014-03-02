@@ -63,6 +63,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem "rspec-rails", "~> 3.0.0.beta2"
+end
 
 # Use paper_trail for keeping track of changes
 gem 'paper_trail', '~> 3.0.0'
