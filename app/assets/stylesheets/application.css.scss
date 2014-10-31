@@ -9,10 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require twitter/bootstrap
- *= require font-awesome
  *= require_tree .
  */
+
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body {
   padding-top: 50px;
