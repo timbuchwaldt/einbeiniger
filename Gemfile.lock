@@ -5,6 +5,15 @@ GIT
   specs:
     cancan (2.0.0.alpha)
 
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 932619c180f90c5aebbb23f4d92fa254b430c775
+  branch: master
+  specs:
+    simple_form (3.1.0.rc2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -167,9 +176,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simple_form (3.0.2)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
     simplecov (0.9.1)
       docile (~> 1.1.0)
       multi_json (~> 1.0)
@@ -221,7 +227,7 @@ DEPENDENCIES
   rspec-rails (~> 3.1.0)
   sass-rails (~> 4.0.0)
   sdoc
-  simple_form (~> 3.0.0)
+  simple_form!
   simplecov
   sqlite3
   turbolinks

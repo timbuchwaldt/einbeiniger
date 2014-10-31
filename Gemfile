@@ -32,7 +32,7 @@ gem 'aasm'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'font-awesome-rails', '~> 4.2.0.0'
-gem 'simple_form', '~> 3.0.0'
+gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 
 # Use devise for authentication
 gem 'devise'

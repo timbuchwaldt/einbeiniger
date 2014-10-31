@@ -1,4 +1,7 @@
 de:
+  activerecord:
+    models:
+      Proposal: Vorschlag
   simple_form:
     "yes": 'Ja'
     "no": 'Nein'
@@ -21,3 +24,5 @@ de:
         name: 'Name'
         location: 'Herkunft'
         year_of_birth: 'Geburtsjahr'
+        title: 'Titel'
+        description: 'Beschreibung'
