@@ -14,7 +14,7 @@ class ProposalsController < ApplicationController
   def admin
     throw "No way man" unless current_user.moderator?
     @proposals = Proposal.all
-    @proposals_enabled = Setting.where(key: "proposals_enabled").first.value
+    @proposals_enabled = Setting.where(key: "proposals_enabled").first.try(:value) || false
   end
 
   # GET /proposals/1
@@ -85,7 +85,7 @@ class ProposalsController < ApplicationController
 
   def enable_proposals
     throw "No way man" unless current_user.moderator?
-    s = Setting.where(key: "proposals_enabled").first
+    s = Setting.where(key: "proposals_enabled").first_or_create
     s.value = "true"
     s.save
     redirect_to admin_proposals_path
