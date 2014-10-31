@@ -23,8 +23,8 @@
         <ul class="nav navbar-nav navbar-right navbar-form">
         <li>
         <div class="btn-group">
-          <%= link_to raw("<span class=\"icon-user\"></span> #{h(current_user.name || current_user.email)}"), edit_user_registration_path, { title: 'Profil bearbeiten', class: 'btn btn-default' } %>
-          <%= link_to raw('<span class="icon-signout"></span>'), destroy_user_session_path, { method: :delete, class: 'btn btn-default', title: 'Abmelden' } %>
+          <%= link_to raw("<span class=\"fa fa-user\"></span> #{h(current_user.name || current_user.email)}"), edit_user_registration_path, { title: 'Profil bearbeiten', class: 'btn btn-default' } %>
+          <%= link_to raw('<span class="fa fa-sign-out"></span>'), destroy_user_session_path, { method: :delete, class: 'btn btn-default', title: 'Abmelden' } %>
         </div>
         </li>
       </ul>
