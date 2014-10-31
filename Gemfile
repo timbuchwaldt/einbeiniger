@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '~> 4.1.7'
 
 group :development do
   # Use sqlite3 as the database for Active Record
@@ -30,9 +30,9 @@ gem 'aasm'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass-rails', '~> 3.0.0.3'
-gem 'font-awesome-rails', '~> 3.2.1.3'
-gem 'simple_form', '~> 3.0.0.rc'
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'font-awesome-rails', '~> 4.2.0.0'
+gem 'simple_form', '~> 3.0.0'
 
 # Use devise for authentication
 gem 'devise'
@@ -44,7 +44,7 @@ gem 'cancan', github: 'ncri/cancan', branch: '2.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -56,7 +56,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.2.4'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -64,7 +64,7 @@ group :doc do
 end
 
 group :test do
-  gem "rspec-rails", "~> 3.0.0.beta2"
+  gem "rspec-rails", "~> 3.1.0"
   gem "simplecov"
 end
 
