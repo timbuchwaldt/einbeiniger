@@ -1,5 +1,16 @@
-<%= simple_form_for(@proposal, defaults: { wrapper_html: {class: 'form-group'}, input_html: { class: 'form-control' } }) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <%= simple_form_for(@proposal, html: { class: 'form-horizontal' },
+    wrapper: :horizontal_form,
+    wrapper_mappings: {
+      check_boxes: :horizontal_radio_and_checkboxes,
+      radio_buttons: :horizontal_radio_and_checkboxes,
+      file: :horizontal_file_input,
+      boolean: :horizontal_boolean
+      }) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description, input_html: { rows: 10 } %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
